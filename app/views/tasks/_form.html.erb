@@ -1,0 +1,46 @@
+<%= form_for(@task, url: confirm_tasks_path) do |f| %>
+
+  <% if @task.errors.any? %>
+     <div id="error_explanation">
+       <h2><%= @task.errors.count %>件のエラーがあります。</h2>
+
+       <ul>
+       <% @task.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+       </ul>
+     </div>
+   <% end %>
+
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id%>
+  <br>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <br>
+  <%= f.label :area%>
+  <%= f.text_field :area %>
+  <br>
+  <%= f.label :deadline %>
+  <%= f.text_field :deadline %>
+  <br>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <br>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <br>
+  <%= f.label :reaction %>
+  <%= f.text_field :reaction %>
+  <br>
+  <%= f.submit %>
+
+<%= link_to "リクエスト一覧に戻る", tasks_path %>
+
+
+
+
+<% end %>

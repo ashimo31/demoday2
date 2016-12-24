@@ -1,0 +1,17 @@
+<p><%= notice %></p>
+
+<h1>リクエスト一覧</h1>
+
+<% @tasks.each do |task| %>
+  <p>タイトル:<%= task.title %></p>
+  <p>本文:<%= task.content %></p>
+  <p>地域:<%= task.area %></p>
+  <p>期限:<%= task.deadline %></p>
+  <p>価格:<%= task.price %></p>
+  <p>ステータス:<%= task.status %></p>
+  <p>リアクション:<%= task.reaction %></p>
+  <%= link_to "リクエストを編集する", edit_task_path(task.id), data: { confirm: '本当に編集していいですか？' } %>
+  <%= link_to 'リクエストを削除する', task_path(task.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+<% end %>
+
+<%= link_to "リクエストを入力する", new_task_path %>
