@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>フォローされている人</h2>
+  <% @followed_users.each do |user| %>
+      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+        <%= profile_img(user) %>
+        <%= user.name %>
+        <%= user.email %>
+        <%= render 'follow_form', user: user %>
+      </div>
+  <% end %>
+  <%= link_to '戻る', users_path %>
+</div>

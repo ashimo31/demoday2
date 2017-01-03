@@ -1,8 +1,9 @@
 class Task < ActiveRecord::Base
-  validates :title, presence: true
-  validates :contents, presence: true
-  validates :area, presence: true
-  validates :deadline, presence: true
-  validates :price, presence: true
-  validates :status, presence: true
+
+       belongs_to :user, dependent: :destroy
+
+       has_many :messages, dependent: :destroy
+
+       enum status: {未着手:0, 対応中:1, 完了:2}
+
 end

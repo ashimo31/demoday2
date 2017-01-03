@@ -1,12 +1,18 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
     @tasks = Task.all
   end
 
-  def new
+  # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
+  def show
+    @message = @task.messages.build
+    @messages = @task.messages
+  end
 
+  def new
     if params[:back]
       @task = Task.new(tasks_params)
     else
@@ -16,14 +22,16 @@ class TasksController < ApplicationController
 
   def confirm
     @task = Task.new(tasks_params)
-    render :new if @task.invalid?
+    render 'new' if @task.invalid?
   end
 
   def create
     @task=Task.new(tasks_params)
-    If @task.save
+    @task.user_id = current_user.id
+    if @task.save
       redirect_to tasks_path, notice: "リクエストを作成しました！"
-    else
+      NoticeMailer.sendmail_task(@task).deliver
+   else
       render 'new'
     end
   end
@@ -34,8 +42,11 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(tasks_params)
+    if @task.update(tasks_params)
     redirect_to tasks_path, notice: "リクエストを編集しました！"
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
@@ -52,3 +63,5 @@ class TasksController < ApplicationController
     def set_task
       @task = Task.find(params[:id])
     end
+
+end

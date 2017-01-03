@@ -1,6 +1,6 @@
 <h3>以下の内容で、送信する。</h3>
 
-<%= form_for(@tadk) do |f| %>
+<%= form_for(@task) do |f| %>
   <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>

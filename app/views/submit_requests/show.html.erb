@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @submit_request.user.name %>
+</p>
+
+<p>
+  <strong>Work:</strong>
+  <%= @submit_request.work.title %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @submit_request.memo %>
+</p>
+
+<p>
+  <strong>Request user:</strong>
+  <%= @submit_request.request_user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @submit_request.status %>
+</p>
+
+<%= link_to 'Edit', edit_submit_request_path(@submit_request) %> |
+<%= link_to 'Back', submit_requests_path %>
