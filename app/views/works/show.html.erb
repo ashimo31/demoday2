@@ -1,34 +1,37 @@
+<html lang="ja">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= work.user.name %>
+  <strong>名前:</strong>
+  <%= @work.user.name %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>タイトル:</strong>
   <%= @work.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>内容:</strong>
   <%= @work.content %>
 </p>
 
 <p>
-  <strong>Deadline:</strong>
-  <%= work.deadline.strftime("%Y年%m月%d日 %H時%M分") %>
+  <strong>締切日:</strong>
+  <%= @work.deadline.strftime("%Y年%m月%d日 %H時%M分") %>
 </p>
 
 <p>
-  <strong>Charge:</strong>
-  <%= work.charge.name %>
+  <strong>担当者:</strong>
+  <%= @work.charge.name %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>ステータス:</strong>
   <%= @work.status %>
 </p>
 
-<%= link_to 'Edit', edit_work_path(@work) %> |
-<%= link_to 'Back', works_path %>
+<%= link_to '依頼事項の修正へ', edit_work_path(@work) %> |
+<%= link_to '依頼事項一覧へ', works_path %>
+
+</html>

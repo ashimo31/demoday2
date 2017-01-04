@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
  has_many :tasks, dependent: :destroy
  # MessageモデルのAssociationを設定
-  has_many :messages, dependent: :destroy
+ has_many :messages, dependent: :destroy
 
  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.find_by(email: auth.info.email)

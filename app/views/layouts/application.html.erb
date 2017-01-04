@@ -18,6 +18,7 @@
     <li><%= link_to '依頼されている事項一覧', submit_requests_path if user_signed_in? %></li>
   </ul>
     </li>
+    <li><%= link_to "リクエスト一覧", tasks_path %></li>
       <% if user_signed_in? %>
     <li><%= link_to 'マイページ', edit_user_registration_path %></li>
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>

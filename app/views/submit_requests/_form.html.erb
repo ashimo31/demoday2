@@ -1,3 +1,4 @@
+<html lang="ja">
 <%= form_for(@submit_request) do |f| %>
   <% if @submit_request.errors.any? %>
     <div id="error_explanation">
@@ -12,15 +13,14 @@
   <% end %>
 
   <% f.hidden_field :user_id %>
-  
-  <div class="field">
-    <%= f.label :work_id %><br>
-    <%= f.collection_select :work_id, Work.where(charge_id: current_user.id), :id, :title %>
-    <%= f.text_field :work_id %>
-  </div>
+
   <div class="field">
     <%= f.label :memo %><br>
     <%= f.text_area :memo %>
+  </div>
+  <div class="field">
+   <%= f.label :work_id %><br>
+   <%= f.collection_select :work_id, Work.where(charge_id: current_user.id), :id, :title %>
   </div>
   <div class="field">
     <%= f.label :request_user_id %><br>
@@ -28,9 +28,10 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.select :status, SubmitRequest.statuses.keys %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</html>

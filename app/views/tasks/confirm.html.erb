@@ -4,15 +4,26 @@
   <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
-
+  <%= f.hidden_field :area %>
+  <%= f.hidden_field :deadline %>
+  <%= f.hidden_field :price %>
+  <%= f.hidden_field :status %>
   <!-- @blog.titleと@blog.contentとすることで、表示用の値を画面に出力しています。 -->
   <p>タイトル:<%= @task.title %></p>
   <p>本文:<%= @task.content %></p>
+  <p>地域:<%= @task.area %></p>
+  <p>期限:<%= @task.deadline %></p>
+  <p>価格:<%= @task.price %></p>
+  <p>ステータス:<%= @task.status %></p>
   <%= f.submit "登録する" %>
 <% end %>
 
 <%= form_for(@task, url: new_task_path, method: 'get') do |f| %>
   <%= f.hidden_field :title %>
   <%= f.hidden_field :content %>
+  <%= f.hidden_field :area %>
+  <%= f.hidden_field :deadline %>
+  <%= f.hidden_field :price %>
+  <%= f.hidden_field :status %>
   <%= f.submit "もどる", name: 'back' %>
 <% end %>
