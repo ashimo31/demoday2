@@ -1,7 +1,7 @@
 <html lang="ja">
 <p id="notice"><%= notice %></p>
 
-<h1>依頼事項の入力</h1>
+<h1>新たなお願い提出</h1>
 
 <table>
   <thead>
@@ -21,9 +21,9 @@
         <td><%= submit_request.user.name %></td>
         <td><%= submit_request.work.title %></td>
         <td><%= submit_request.memo %></td>
-        <td><%= submit_request.request_user_id %></td>
+        <td><%= submit_request.request_user_id,name %></td>
         <td><%= submit_request.status.key %></td>
-        <td><%= link_to 'Show', submit_request %></td>
+        <td><%= link_to '詳細を見る', submit_request %></td>
         <td><%= link_to '承認する', approve_submit_request_path(submit_request, submit_request: {status: 2}), method: :patch, data: { confirm: '承認しますか?' } %></td>
         <td><%= link_to '却下する', reject_submit_request_path(submit_request, submit_request: {status: 9}), method: :patch, data: { confirm: '却下しますか?' } %></td>
       </tr>

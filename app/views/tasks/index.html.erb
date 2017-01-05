@@ -1,20 +1,23 @@
 <div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+  <div class="wrapper colß-md-8 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
-    <h1>リクエスト一覧</h1>
-    <%= link_to "リクエストを作成する", new_task_path, class: 'btn btn-default' %>
+    <h2>お知らせ一覧</h2>
+    <h1>お知らせのタイトル（太字）をクリックするとメッセージの交換ができます</h1>
+    <%= link_to "お知らせを作成する", new_task_path, class: 'btn btn-default' %>
     <% @tasks.each do |task| %>
       <div class="row">
         <%= link_to task_path(task) do %>
           <h4><strong><%= task.title %></strong></h4>
         <% end %>
+    <p>By:<%= task.user.name %></p>
     <p>本文:<%= task.content %></p>
     <p>地域:<%= task.area_id %></p>
     <p>期限:<%= task.deadline %></p>
-    <p>価格:<%= task.price %></p>
-    <p>ステータス:<%= task.status %></p>
-    <%= link_to "リクエストを修正する", edit_task_path(task.id), data: { confirm: '本当に修正していいですか？' } %>
-    <%= link_to 'リクエストを削除する', task_path(task.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+    <p>種類:<%= task.status %></p>
+    <p>イメージ:<%= task.image %></p>
+
+    <%= link_to "お知らせを修正する", edit_task_path(task.id) %>
+    <%= link_to 'お知らせを削除する', task_path(task.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
     <% end %>
    </div>
 </div>

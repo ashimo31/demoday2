@@ -10,15 +10,14 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>依頼されている事項一覧</h1>
+<h1>お願いされている事項一覧</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>名前</th>
+      <th>依頼者</th>
       <th>依頼事項</th>
       <th>メモ</th>
-      <th>依頼者</th>
       <th>ステータス</th>
       <th colspan="3"></th>
     </tr>
@@ -30,7 +29,6 @@
         <td><%= submit_request.user.name %></td>
         <td><%= submit_request.work.title %></td>
         <td><%= submit_request.memo %></td>
-        <td><%= submit_request.request_user_id %></td>
         <td><%= submit_request.status %></td>
         <td><%= link_to '詳細を見る', submit_request %></td>
         <td><%= link_to '修正する', edit_submit_request_path(submit_request) %></td>
@@ -42,6 +40,6 @@
 
 <br>
 
-<%= link_to '新たな依頼の確認', new_submit_request_path %>
+<%= link_to '新たな依頼事項の提出へ', new_submit_request_path %>
 
 </html>

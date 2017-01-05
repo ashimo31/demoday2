@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  <strong>締切日:</strong>
+  <strong>いつまでに:</strong>
   <%= @work.deadline.strftime("%Y年%m月%d日 %H時%M分") %>
 </p>
 
@@ -31,7 +31,7 @@
   <%= @work.status %>
 </p>
 
-<%= link_to '依頼事項の修正へ', edit_work_path(@work) %> |
-<%= link_to '依頼事項一覧へ', works_path %>
+<%= link_to 'お願いの修正へ', edit_work_path(@work) %> |
+<%= link_to 'お願い一覧へ', works_path %>
 
 </html>

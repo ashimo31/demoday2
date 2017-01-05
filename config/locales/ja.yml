@@ -3,10 +3,11 @@ ja:
     title: タイトル
     name: 名前
     email: メールアドレス
+    kind: 種類
     content: 内容
     area: 地域
     status: ステータス
-    deadline: 締切日
+    deadline: いつまでに
     price: 価格または単価
     current_password: "現在のパスワード"
     password: "パスワード"

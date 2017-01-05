@@ -19,14 +19,16 @@
   <%= f.label :status %><br>
   <%= f.select :status, Task.statuses.keys %>
   </div>
-  <br>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <br>
+
+
+  <div class="field">
+      <%= image_url(@task)  %>
+      <%= f.file_field :image %>
+  </div>
 
   <%= f.submit %>
 
-<%= link_to "リクエスト一覧に戻る", tasks_path %>
+<%= link_to "お知らせ一覧に戻る", tasks_path %>
 
 
 <% end %>

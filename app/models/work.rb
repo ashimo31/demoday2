@@ -6,6 +6,6 @@ class Work < ActiveRecord::Base
 
   validates :title, presence: true
 
-  enum status: {未着手:0, 対応中:1, 完了:2}
+  enum status: {まだ反応なし:0, ご相談中:1, 完了:2}
 
 end

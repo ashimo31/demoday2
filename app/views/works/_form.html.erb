@@ -19,6 +19,17 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+      <%= f.label :kind %><br>
+  <select name="kind">
+    <option value="探しています">
+    探しています</option>
+    <option value="提供できます">
+    提供できます</option>
+    <option value="その他">
+    その他</option>
+</select><br>
+<div class="field">
+  <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>

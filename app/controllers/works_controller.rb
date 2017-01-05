@@ -5,7 +5,7 @@ class WorksController < ApplicationController
   # GET /works
   # GET /works.json
   def index
-    @works = Work.where(charge_id: current_user.id)
+    @works = Work.all
   end
 
   # GET /works/1
