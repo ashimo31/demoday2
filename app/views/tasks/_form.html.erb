@@ -8,7 +8,7 @@
   <%= f.text_field :content %>
   <br>
   <p> 地域
-   <%= f.collection_select(:area_id, Area.all, :id, :name, :prompt => "選択してください") %>
+   <%= f.collection_select(:area_id, Area.all, :id, :prefecture, :prompt => "選択してください") %>
   </p>
   <br>
   <div class="field">
@@ -19,16 +19,23 @@
   <%= f.label :status %><br>
   <%= f.select :status, Task.statuses.keys %>
   </div>
-
+  <br>
   <div class="field">
-      <%= profile_img(@task)  %>
-      <%= f.file_field :image %>
-      <%= f.hidden_field :image_cache %>
-  </div>
+  <%= f.label :写真のアップロード %><br>
+  <%= image_img(@task)  %>
 
+  <div class="button_wrapper">
+   <button class="button1">
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %></button>
+    </div>
+  </div>
+  <br>
+  <br>
   <%= f.submit %>
+  <br>
+  <br>
 
 <%= link_to "お知らせ一覧に戻る", tasks_path %>
-
 
 <% end %>

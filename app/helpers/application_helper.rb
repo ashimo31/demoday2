@@ -10,7 +10,7 @@ module ApplicationHelper
     image_tag(img_url, alt: user.name)
   end
 
-  def profile_img(task)
+  def image_img(task)
       return image_tag(task.image, alt: task.title) if task.image?
 
       end

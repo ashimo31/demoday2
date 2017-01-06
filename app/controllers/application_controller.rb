@@ -15,6 +15,6 @@ private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
     devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
-    task_parameter_sanitizer.permit(:image, keys: PERMISSIBLE_ATTRIBUTES)
+    devise_parameter_sanitizer.permit(:image, keys: PERMISSIBLE_ATTRIBUTES)
   end
 end

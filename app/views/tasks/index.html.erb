@@ -5,14 +5,12 @@
     <h1>お知らせのタイトル（太字）をクリックするとメッセージの交換ができます</h1>
     <%= link_to "お知らせを作成する", new_task_path, class: 'btn btn-default' %>
     <% @tasks.each do |task| %>
-      <div class="row">
-        <%= link_to task_path(task) do %>
-          <h4><strong><%= task.title %></strong></h4>
-        <% end %>
+    <div class="row">
+    <h4><strong><%= task.title %></strong></h4>
     <p>By:<%= task.user.name %></p>
     <p>種類:<%= task.status %></p>
     <p>本文:<%= task.content %></p>
-    <p>地域:<%= task.area_id %></p>
+    <p>地域:<%= task.area.prefecture %></p>
     <p>期限:<%= task.deadline %></p>
     <p><%= image_tag task.image %></p>
 

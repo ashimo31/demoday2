@@ -8,14 +8,21 @@
 
 <h1> プロファイル詳細</h1>
 
-
   <div class="field">
     <%= profile_img(@user) if profile_img(@user) %>
   </div>
+
   <div class="field">
     <%= f.label :お名前 %><br />
     <%= f.text_field :name, class: "form-control" %>
   </div>
+
+  <h4>プロファイル写真の入力・更新</h4>
+  <div class="button_wrapper">
+    <button class="button1">
+    <%= f.file_field :avatar %>
+  </div>
+
 <br>
 
 <h3>パスワードの確認・変更</h3>
