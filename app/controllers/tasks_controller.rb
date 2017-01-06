@@ -30,10 +30,21 @@ class TasksController < ApplicationController
     @task.user_id = current_user.id
     if @task.save
       redirect_to tasks_path, notice: "リクエストを作成しました！"
-      NoticeMailer.sendmail_task(@task).deliver
+
    else
       render 'new'
     end
+
+    @task = current_user.tasks.build(tasks_params)
+
+    if @task.save
+      flash[:success] = "写真を掲載しました!"
+      
+    else
+      flash[:alert] = "写真の掲載ができません!  フォームを見直してください"
+      render :new
+    end
+
   end
 
   def edit
@@ -57,7 +68,7 @@ class TasksController < ApplicationController
 
   private
     def tasks_params
-      params.require(:task).permit(:title, :content, :deadline, :price, :area_id, :status)
+      params.require(:task).permit(:title, :content, :deadline, :price, :area_id, :status, :image)
     end
 
     def set_task

@@ -9,7 +9,12 @@ module ApplicationHelper
     end
     image_tag(img_url, alt: user.name)
   end
-end
+
+  def profile_img(task)
+      return image_tag(task.image, alt: task.title) if task.image?
+
+      end
+    end
 
 module ActionView
  module Helpers

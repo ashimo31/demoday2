@@ -8,12 +8,13 @@ class ApplicationController < ActionController::Base
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
 
-  
+  PERMISSIBLE_ATTRIBUTES = %i(task image image_cache)
 
 private
     #deviseのストロングパラメーターにカラム追加するメソッドを定義
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: PERMISSIBLE_ATTRIBUTES)
     devise_parameter_sanitizer.permit(:account_update, keys: PERMISSIBLE_ATTRIBUTES)
+    task_parameter_sanitizer.permit(:image, keys: PERMISSIBLE_ATTRIBUTES)
   end
 end

@@ -13,8 +13,8 @@
   <thead>
     <tr>
       <th>名前</th>
-
       <th>タイトル</th>
+      <th>種類</th>
       <th>内容</th>
       <th>いつまでに</th>
       <th>担当者</th>
@@ -28,7 +28,7 @@
       <tr>
         <td><%= work.user.name %></td>
         <td><%= work.title %></td>
-
+        <td><%= work.kind %></td>
         <td><%= work.content %></td>
         <td><%= work.deadline.strftime("%Y年%m月%d日 %H時%M分") %></td>
         <td><%= work.charge.name %></td>

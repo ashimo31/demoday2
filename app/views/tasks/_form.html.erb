@@ -20,10 +20,10 @@
   <%= f.select :status, Task.statuses.keys %>
   </div>
 
-
   <div class="field">
-      <%= image_url(@task)  %>
+      <%= profile_img(@task)  %>
       <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
   </div>
 
   <%= f.submit %>
