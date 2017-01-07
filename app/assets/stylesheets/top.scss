@@ -1,7 +1,7 @@
 
 header {
   width: 100%;
-  background-color: #2c3e50;
+  background-color: #BDB76B;
   height: 54px;
 }
 
@@ -29,7 +29,7 @@ header ul:after {
 }
 
 .main-header {
-  padding-bottom: 15%;
+  padding-bottom: 7.5%;
   width: 100%;
   background-size: cover;
   background-image: url("images-master/header.jpg");
@@ -39,14 +39,14 @@ header ul:after {
 .main-header img {
   display: block;
   margin: 0 auto;
-  width: 25%;
-  padding-top: 15%;
+  width: 50%;
+
 }
 
 .about {
   background-color: white;
   color: #333;
-  padding: 80px;
+  padding: 40px;
 }
 
 .function {
@@ -69,7 +69,7 @@ header ul:after {
 
 footer {
   width: 100%;
-  background-color:#2c3e50;
+  background-color:#BDB76B;
   padding: 20px 0 10px 0;
   color: white;
   margin: auto;

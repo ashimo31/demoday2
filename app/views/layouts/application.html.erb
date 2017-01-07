@@ -9,25 +9,21 @@
 <body>
 
 <header>
+  <ul style="list-style:none;">
   <li><%= link_to 'トップページ', root_path %></li>
   <li><%= link_to 'お知らせ一覧', tasks_path if user_signed_in?%></li>
   <li><%= link_to '参加者一覧', users_path if user_signed_in? %></li>
   <li><%= link_to 'お願い一覧', works_path if user_signed_in? %></li>
   <li><%= link_to '人からお願いされている事項一覧', submit_requests_path if user_signed_in? %></li>
-  </ul>
-  </li>
 
-      <% if user_signed_in? %>
+  <% if user_signed_in? %>
     <li><%= link_to 'マイページ', edit_user_registration_path %></li>
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      <% else %>
+  <% else %>
     <li><%= link_to 'ログイン', new_user_session_path %></li>
     <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-      <% end %>
-    </ul>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+  <% end %>
+  </ul>
 </header>
 
 <%= yield %>
