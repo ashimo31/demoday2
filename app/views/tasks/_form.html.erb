@@ -7,17 +7,17 @@
   <%= f.label :content %>
   <%= f.text_field :content %>
   <br>
-  <p> 地域
+  <div class="field">
+  <%= f.label :kind %><br>
+  <%= f.select :status, Task.statuses.keys %>
+  </div>  <br>
+  <div class="field">
+  <p> 場所
    <%= f.collection_select(:area_id, Area.all, :id, :prefecture, :prompt => "選択してください") %>
-  </p>
-  <br>
+  </p> </div>  <br>
   <div class="field">
   <%= f.label :deadline %><br>
   <%= f.datetime_select :deadline %>
-  </div>
-  <div class="field">
-  <%= f.label :status %><br>
-  <%= f.select :status, Task.statuses.keys %>
   </div>
   <br>
   <div class="field">

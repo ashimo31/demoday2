@@ -1,3 +1,3 @@
 class Area < ActiveRecord::Base
-  has_many :task, dependent: :destroy
+  has_many :task
 end
