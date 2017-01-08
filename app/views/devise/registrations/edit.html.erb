@@ -32,9 +32,9 @@
    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
 
  <div class="field">
    <%= f.label :現在のパスワード %> <i>(変更を確認するために変更前のパスワードを入力してください)</i><br />
