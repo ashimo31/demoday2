@@ -5,13 +5,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-
-    if params[:task].present?
-    @tasks = @tasks.get_by_task params[:task]
-    end
-    if params[:status].present?
-    @tasks = @tasks.get_by_status params[:status]
-    end
   end
 
   # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
