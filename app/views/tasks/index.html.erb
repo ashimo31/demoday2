@@ -5,6 +5,17 @@
     <%= link_to "お知らせを作成する", new_task_path, class: 'btn btn-default' %>
     <br>
     <%= link_to 'お願い一覧表へ', works_path, class: 'btn btn-default' %>
+
+    <div>
+    <%= form_tag(tasks_path, method: “get”) do %>
+    <%= label_tag :title, “タイトル” %><%= text_field_tag :title, params[:title] %>
+    <%= label_tag :status, “ステータス” %>
+    <%= select_tag :status, options_for_select(Task.statuses), include_blank: true %>
+    <%= submit_tag “検索” %>
+    <% end %>
+    </div>
+
+
  <% @tasks.each do |task| %>
     <div class="row">
     <%= link_to task_path(task) do %>
@@ -13,7 +24,7 @@
     <p>By:<%= task.user.name %></p>
     <p>種類:<%= task.status %></p>
     <p>本文:<%= task.content %></p>
-    <p>地域:<%= task.area_id %></p>
+    <p>地域:<%= task.area.prefecture%></p>
     <p>期限:<%= task.deadline %></p>
     <p><%= image_tag task.image %></p>
 

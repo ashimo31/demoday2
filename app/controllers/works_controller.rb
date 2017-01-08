@@ -2,7 +2,8 @@ class WorksController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_work, only: [:show, :edit, :update, :destroy]
-  # GET /works
+
+  # パラメータとして名前か性別を受け取っている場合は絞って検索する
   # GET /works.json
   def index
     @works = Work.all
