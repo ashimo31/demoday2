@@ -1,11 +1,11 @@
+
 class SubmitRequestsController < ApplicationController
 
-  before_action :set_submit_request, only: [:show, :edit, :update, :destroy]
+  before_action :set_submit_request, only: [:show, :edit, :create, :update, :destroy]
   # GET /submit_requests
   # GET /submit_requests.json
   def index
     @submit_requests = SubmitRequest.where(request_user_id: current_user.id).where(status: 1)
-
   end
 
   # GET /submit_requests/1

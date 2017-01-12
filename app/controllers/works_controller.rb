@@ -6,9 +6,11 @@ class WorksController < ApplicationController
   # パラメータとして名前か性別を受け取っている場合は絞って検索する
   # GET /works.json
   def index
-    @works = Work.all
+    #@works = Work.where(charge_id: current_user.id)
+    @works = Work.where.not(status: 2).order(updated_at: :desc)
+    #@works= Work.all
+    #@user = User.find(user_id: params[:user_id])
   end
-
   # GET /works/1
   # GET /works/1.json
   def show
@@ -39,9 +41,6 @@ class WorksController < ApplicationController
       end
     end
   end
-
-
-
   # PATCH/PUT /works/1
   # PATCH/PUT /works/1.json
   def update

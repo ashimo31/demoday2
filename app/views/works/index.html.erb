@@ -30,7 +30,7 @@
         <td><%= work.title %></td>
         <td><%= work.kind %></td>
         <td><%= work.content %></td>
-        <td><%= work.deadline.strftime("%Y年%m月%d日 %H時%M分") %></td>
+        <td><%= work.deadline%></td>
         <td><%= work.charge.name %></td>
         <td><%= work.status %></td>
         <% if work.user == current_user%>

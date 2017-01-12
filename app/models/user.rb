@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
  #mount_uploader :avatar, AvatarUploader
 
  has_many :tasks, dependent: :destroy
+
+ has_many :submit_requests, dependent: :destroy
  # MessageモデルのAssociationを設定
  has_many :messages, dependent: :destroy
 
@@ -82,5 +84,9 @@ class User < ActiveRecord::Base
 
   has_many :submit_requests, dependent: :destroy
   has_many :received_requests, class_name: 'SubmitRequest', foreign_key: 'request_user_id'
+
+  def friend
+      followers & followed_users
+  end
 
 end

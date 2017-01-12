@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- root 'top#index'  
+ root 'top#index'
 
   resources :areas
   resources :submit_requests
@@ -41,15 +41,12 @@ Rails.application.routes.draw do
  resources :followers, only: [:index]
  resources :relationships, only: [:create, :destroy]
 
-
- resources :submit_requests do
-   get 'inbox', on: :collection
-   member do
-     patch 'approve'
-     patch 'reject'
-   end
- end
-
-
+  resources :submit_requests do
+    get 'inbox', on: :collection
+    member do
+      patch 'approve'
+      patch 'reject'
+    end
+  end
 
 end

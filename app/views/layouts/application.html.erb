@@ -14,7 +14,7 @@
   <li><%= link_to 'お知らせ一覧', tasks_path if user_signed_in?%></li>
   <li><%= link_to '参加者一覧', users_path if user_signed_in? %></li>
   <li><%= link_to 'お願い一覧', works_path if user_signed_in? %></li>
-  <li><%= link_to '人からお願いされている事項一覧', submit_requests_path if user_signed_in? %></li>
+  <li><%= link_to 'お願いされている事項一覧', submit_requests_path if user_signed_in? %></li>
 
   <% if user_signed_in? %>
     <li><%= link_to 'マイページ', edit_user_registration_path %></li>

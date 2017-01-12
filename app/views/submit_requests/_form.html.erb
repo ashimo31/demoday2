@@ -1,33 +1,21 @@
-<html lang="ja">
 <%= form_for(@submit_request) do |f| %>
-  <% if @submit_request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@submit_request.errors.count, "error") %> prohibited this submit_request from being saved:</h2>
-
-      <ul>
-      <% @submit_request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <% f.hidden_field :user_id %>
 
   <div class="field">
-    <%= f.label :メモ %><br>
-    <%= f.text_area :memo %>
+   <%= f.label :お願い事項 %><br>
+    <%= f.collection_select :work_id, Work.where(charge_id: current_user.id), :id, :title %>
   </div>
   <div class="field">
-   <%= f.label :お願い事項 %><br>
-   <%= f.collection_select :work_id, Work.where(charge_id: current_user.id), :id, :title %>
+    <%= f.label :メモ %><br>
+    <%= f.text_area :memo %>
   </div>
   <div class="field">
     <%= f.label :お願いする相手%><br>
     <%= f.collection_select :request_user_id, User.where.not(id: current_user.id), :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :status %><br>
+    <%= f.label :ステータス %><br>
     <%= f.select :status, SubmitRequest.statuses.keys %>
   </div>
   <div class="actions">
@@ -35,4 +23,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-</html>

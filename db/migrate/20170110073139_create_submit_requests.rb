@@ -6,6 +6,7 @@ class CreateSubmitRequests < ActiveRecord::Migration
       t.text :memo
       t.integer :request_user_id, null: false
       t.integer :status, default: 1
+      t.integer :charge_id, null: false
 
       t.timestamps null: false
     end

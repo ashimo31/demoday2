@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order("updated_at DESC")
   end
 
   # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
