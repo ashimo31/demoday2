@@ -3,8 +3,15 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 
+
   def index
     @tasks = Task.all.order("updated_at DESC")
+    if params[:title].present?
+      @tasks = @tasks.get_by_title params[:title]
+      end
+    if params[:status].present?
+      @tasks = @tasks.get_by_status params[:status]
+    end
   end
 
   # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
@@ -30,7 +37,7 @@ class TasksController < ApplicationController
     @task=Task.new(tasks_params)
     @task.user_id = current_user.id
     if @task.save
-      redirect_to tasks_path, notice: "リクエストを作成しました！"
+      redirect_to tasks_path, notice: "お知らせを作成しました！"
 
    else
       render 'new'
@@ -45,7 +52,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update(tasks_params)
-    redirect_to tasks_path, notice: "リクエストを編集しました！"
+    redirect_to tasks_path, notice: "お知らせを編集しました！"
     else
       render action: 'edit'
     end
@@ -54,7 +61,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_path, notice: "リクエストを削除しました！"
+    redirect_to tasks_path, notice: "お知らせを削除しました！"
   end
 
   private

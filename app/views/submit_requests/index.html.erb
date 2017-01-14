@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="normalize.css">
 </head>
 
-<h1>お願いされている事項一覧</h1>
+<h1>お願いしている事項一覧</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>依頼者</th>
+      <th>依頼した相手</th>
       <th>依頼事項</th>
       <th>メモ</th>
       <th>ステータス</th>
@@ -24,7 +24,7 @@
   <tbody>
     <% @submit_requests.each do |submit_request| %>
       <tr>
-        <td><%= submit_request.user.name %></td>
+        <td><%= submit_request.request_user.name %></td>
         <td><%= submit_request.work.title %></td>
         <td><%= submit_request.memo %></td>
         <td><%= submit_request.status %></td>

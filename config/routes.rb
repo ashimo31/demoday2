@@ -3,7 +3,6 @@ Rails.application.routes.draw do
  root 'top#index'
 
   resources :areas
-  resources :submit_requests
   resources :works
 
   get 'relationships/create'

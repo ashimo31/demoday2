@@ -6,7 +6,7 @@ class WorksController < ApplicationController
   # パラメータとして名前か性別を受け取っている場合は絞って検索する
   # GET /works.json
   def index
-    #@works = Work.where(charge_id: current_user.id)
+    @works = Work.where(charge_id: current_user.id)
     @works = Work.where.not(status: 2).order(updated_at: :desc)
     #@works= Work.all
     #@user = User.find(user_id: params[:user_id])

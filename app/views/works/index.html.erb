@@ -33,7 +33,7 @@
         <td><%= work.deadline%></td>
         <td><%= work.charge.name %></td>
         <td><%= work.status %></td>
-        <% if work.user == current_user%>
+        <% if work.charge.name == current_user.name%>
         <td><%= link_to '詳細を見る', work %></td>
         <td><%= link_to '編集する', edit_work_path(work) %></td>
         <td><%= link_to '削除する', work, method: :delete, data: { confirm: '本当に削除しますか' } %></td>

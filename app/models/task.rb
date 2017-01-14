@@ -6,4 +6,8 @@ class Task < ActiveRecord::Base
 
        mount_uploader :image, AvatarUploader
 
+       scope :get_by_title, ->(title) {where("title like ?", "%#{title}%")}
+
+       scope :get_by_status, ->(status) {where(status: status)}
+
 end

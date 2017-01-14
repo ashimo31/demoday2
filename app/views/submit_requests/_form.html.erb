@@ -14,10 +14,7 @@
     <%= f.label :お願いする相手%><br>
     <%= f.collection_select :request_user_id, User.where.not(id: current_user.id), :id, :name %>
   </div>
-  <div class="field">
-    <%= f.label :ステータス %><br>
-    <%= f.select :status, SubmitRequest.statuses.keys %>
-  </div>
+  
   <div class="actions">
     <br>
     <%= f.submit %>

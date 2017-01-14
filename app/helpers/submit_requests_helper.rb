@@ -11,8 +11,4 @@ module SubmitRequestsHelper
         '却下'
     end
   end
-
-  def done_display_name(done)
-    done ? '完了' : '未完了'
-  end
 end
