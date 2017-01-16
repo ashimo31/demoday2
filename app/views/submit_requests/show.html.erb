@@ -20,10 +20,5 @@
   <%= @submit_request.request_user.name %>
 </p>
 
-<p>
-  <strong>ステータス:</strong>
-  <%= @submit_request.status %>
-</p>
-
 <%= link_to '修正する', edit_submit_request_path(@submit_request) %> |
 <%= link_to '依頼事項一覧へ', submit_requests_path %>

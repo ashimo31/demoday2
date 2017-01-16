@@ -17,7 +17,6 @@
       <th>依頼した人</th>
       <th>依頼事項</th>
       <th>メモ</th>
-      <th>ステータス</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,7 +27,6 @@
         <td><%= submit_request.user.name %></td>
         <td><%= submit_request.work.title %></td>
         <td><%= submit_request.memo %></td>
-        <td><%= submit_request.status%></td>
         <td><%= link_to '詳細を見る', submit_request %></td>
         <td><%= link_to '承認する', approve_submit_request_path(submit_request, submit_request: {status: "依頼中"}), method: :patch, data: { confirm: '承認しますか?' } %></td>
         <td><%= link_to '却下する', reject_submit_request_path(submit_request, submit_request: {status: "却下"}), method: :patch, data: { confirm: '却下しますか?' } %></td>
