@@ -15,24 +15,23 @@
         <% end %>
     </div>
 
+   <% @tasks.each do |task| %>
+      <div class="row">
+      <%= link_to task_path(task) do %>
+      <h4><strong><%= task.title %></strong></h4>
+      <% end %>
+      <p>By:<%= task.user.name %></p>
+      <p>種類:<%= task.status %></p>
+      <p>本文:<%= task.content %></p>
+      <p>地域:<%= task.area.prefecture%></p>
+      <p>作成日:<%= task.deadline %></p>
+      <p><%= image_tag task.image %></p>
 
- <% @tasks.each do |task| %>
-    <div class="row">
-    <%= link_to task_path(task) do %>
-    <h4><strong><%= task.title %></strong></h4>
+    <% if task.user == current_user%>
+      <%= link_to "お知らせを修正する", edit_task_path(task.id) %>
+      <%= link_to 'お知らせを削除する', task_path(task.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
     <% end %>
-    <p>By:<%= task.user.name %></p>
-    <p>種類:<%= task.status %></p>
-    <p>本文:<%= task.content %></p>
-    <p>地域:<%= task.area.prefecture%></p>
-    <p>作成日:<%= task.deadline %></p>
-    <p><%= image_tag task.image %></p>
 
-  <% if task.user == current_user%>
-    <%= link_to "お知らせを修正する", edit_task_path(task.id) %>
-    <%= link_to 'お知らせを削除する', task_path(task.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
-
- <% end %>
   <% end %>
-   </div>
+ </div>
 </div>

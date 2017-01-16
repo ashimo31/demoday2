@@ -1,15 +1,16 @@
+
 <%= form_for(@task) do |f| %>
    <%= f.error_messages! %>
 
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: 'form-control' %>
   <br>
   <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content, class: 'form-control' %>
   <br>
   <div class="field">
   <%= f.label :kind %><br>
-  <%= f.select :status, Task.statuses.keys %>
+  <%= f.select :status, Task.statuses.keys, class: 'form-control'  %>
   </div>  <br>
   <div class="field">
   <p> 場所
@@ -17,17 +18,17 @@
   </p> </div>  <br>
   <div class="field">
   <%= f.label :作成日 %><br>
-  <%= f.datetime_select :deadline %>
+  <%= f.datetime_select :deadline, class: 'form-control'  %>
   </div>
   <br>
   <div class="field">
   <%= f.label :写真のアップロード %><br>
-  <%= image_img(@task)  %>
+  <%= image_img(@task)   %>
 
   <div class="button_wrapper">
    <button class="button1">
     <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache %></button>
+    <%= f.hidden_field :image_cache, class: 'form-control'  %></button>
     </div>
   </div>
   <br>
