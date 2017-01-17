@@ -9,7 +9,7 @@
 
 <h1>お願い一覧</h1>
 <div class="table-responsive">
-  <table class="table">
+  <table class="table table-hover">
     <thead>
       <tr align="center">
         <th>名前</th>
@@ -30,9 +30,9 @@
           <td><%= work.title %></td>
           <td><%= work.kind %></td>
           <td><%= work.content %></td>
-          <td><%= work.deadline%></td>
+          <td><%= work.deadline.strftime("%Y年%m月%d日") %></td>
           <td><%= work.charge.name %></td>
-          <td><%= work.status %></td>
+          <td><%= work.status%></td>
           <% if work.charge.name == current_user.name%>
           <td><%= link_to '詳細を見る', work %></td>
           <td><%= link_to '編集する', edit_work_path(work) %></td>
