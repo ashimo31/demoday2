@@ -11,29 +11,31 @@
 
 <h1>お願いされている事項一覧</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>依頼した人</th>
-      <th>依頼事項</th>
-      <th>メモ</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @submit_requests.each do |submit_request| %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= submit_request.user.name %></td>
-        <td><%= submit_request.work.title %></td>
-        <td><%= submit_request.memo %></td>
-        <td><%= link_to '詳細を見る', submit_request %></td>
-        <td><%= link_to '承認する', approve_submit_request_path(submit_request, submit_request: {status: "依頼中"}), method: :patch, data: { confirm: '承認しますか?' } %></td>
-        <td><%= link_to '却下する', reject_submit_request_path(submit_request, submit_request: {status: "却下"}), method: :patch, data: { confirm: '却下しますか?' } %></td>
+        <th>依頼した人</th>
+        <th>依頼事項</th>
+        <th>メモ</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @submit_requests.each do |submit_request| %>
+        <tr>
+          <td><%= submit_request.user.name %></td>
+          <td><%= submit_request.work.title %></td>
+          <td><%= submit_request.memo %></td>
+          <td><%= link_to '詳細を見る', submit_request %></td>
+          <td><%= link_to '承認する', approve_submit_request_path(submit_request, submit_request: {status: "依頼中"}), method: :patch, data: { confirm: '承認しますか?' } %></td>
+          <td><%= link_to '却下する', reject_submit_request_path(submit_request, submit_request: {status: "却下"}), method: :patch, data: { confirm: '却下しますか?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 

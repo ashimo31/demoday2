@@ -8,40 +8,41 @@
 </head>
 
 <h1>お願い一覧</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>名前</th>
-      <th>タイトル</th>
-      <th>種類</th>
-      <th>内容</th>
-      <th>いつまでに</th>
-      <th>担当者</th>
-      <th>ステータス</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @works.each do |work| %>
-      <tr>
-        <td><%= work.user.name %></td>
-        <td><%= work.title %></td>
-        <td><%= work.kind %></td>
-        <td><%= work.content %></td>
-        <td><%= work.deadline%></td>
-        <td><%= work.charge.name %></td>
-        <td><%= work.status %></td>
-        <% if work.charge.name == current_user.name%>
-        <td><%= link_to '詳細を見る', work %></td>
-        <td><%= link_to '編集する', edit_work_path(work) %></td>
-        <td><%= link_to '削除する', work, method: :delete, data: { confirm: '本当に削除しますか' } %></td>
-        <% end %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr align="center">
+        <th>名前</th>
+        <th>タイトル</th>
+        <th>種類</th>
+        <th>内容</th>
+        <th>いつまでに</th>
+        <th>担当者</th>
+        <th>ステータス</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @works.each do |work| %>
+        <tr>
+          <td><%= work.user.name %></td>
+          <td><%= work.title %></td>
+          <td><%= work.kind %></td>
+          <td><%= work.content %></td>
+          <td><%= work.deadline%></td>
+          <td><%= work.charge.name %></td>
+          <td><%= work.status %></td>
+          <% if work.charge.name == current_user.name%>
+          <td><%= link_to '詳細を見る', work %></td>
+          <td><%= link_to '編集する', edit_work_path(work) %></td>
+          <td><%= link_to '削除する', work, method: :delete, data: { confirm: '本当に削除しますか' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
 

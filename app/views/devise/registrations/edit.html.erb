@@ -9,7 +9,7 @@
 <h1> プロファイル詳細</h1>
 
   <div class="field">
-    <%= profile_img(@user) if profile_img(@user) %>
+    <%= profile_img(@user) if profile_img(@user) class="img-responsive"%>
   </div>
 
   <div class="field">
@@ -20,7 +20,7 @@
   <h4>プロファイル写真の入力・更新</h4>
   <div class="button_wrapper">
     <button class="button1">
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar, class: "img-responsive" %>
   </div>
 
 <br>

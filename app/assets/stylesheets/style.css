@@ -87,3 +87,8 @@ html {
 body {
   text-align: center;
 }
+
+.img-responsive{
+  margin-bottom: 10px;
+  padding: 50px 50px 50px 50px;
+}
