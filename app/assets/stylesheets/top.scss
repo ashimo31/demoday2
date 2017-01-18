@@ -70,13 +70,6 @@ header ul:after {
   background-attachment: fixed;
 }
 
-.main-header img {
-  display: block;
-  margin: 0 auto;
-  width: 50%;
-
-}
-
 .about {
   background-color: white;
   color: #333;
@@ -89,17 +82,6 @@ header ul:after {
   padding-bottom: 185px;
 }
 
-.function-images {
-  width: 100%;
-  display: table;
-  margin-top: 60px;
-  table-layout: fixed;
-}
-
-.function-image {
-  display: table-cell;
-  width: 100%;
-}
 
 footer {
   width: 100%;
@@ -120,4 +102,12 @@ html {
 
 body {
   text-align: center;
+}
+
+.main-header {
+  padding-bottom: 15%;
+  width: 100%;
+  background-size: cover;
+  background-image:  url("header.jpg");
+  background-attachment: fixed;
 }

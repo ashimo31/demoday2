@@ -68,6 +68,30 @@ header ul:after {
   width: 100%;
 }
 
+.profile-images {
+  width: 100%;
+  display: table;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+.profile-image {
+  display: table-cell;
+  width: 100%;
+}
+
+.password-images {
+  width: 100%;
+  display: table;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+.password-image {
+  display: table-cell;
+  width: 100%;
+}
+
 footer {
   width: 100%;
   background-color:#BDB76B;
