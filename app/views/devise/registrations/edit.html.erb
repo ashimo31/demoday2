@@ -66,37 +66,25 @@
 
 <div class="col-md-3 col-sm-6">
   <div class="password-image">
-
-    <div class="field">
      <%= f.label :現在のパスワード %> <i>(現在のパスワードを入力してください)</i><br />
      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-    </div>
-
-
 </div>
 </div>
 
 <div class="col-md-3 col-sm-6">
   <div class="password-image">
-
-    <div class="field">
       <%= f.label :新しいパスワード %> <i>(変更しない場合は入力不要です)</i><br />
       <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       <% if @minimum_password_length %>
         <em><%= @minimum_password_length %> 文字必要です</em>
       <% end %>
-    </div>
-
   </div>
 </div>
 
 <div class="col-md-3 col-sm-6">
   <div class="password-image">
-
-    <div class="field">
       <%= f.label :新しいパスワードの確認 %><i>(もう一度入力してください)</i＞<br />
       <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control"%>
-    </div>
 </div>
 </div>
 
