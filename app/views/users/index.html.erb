@@ -1,16 +1,17 @@
 <div class="container">
   <h2>参加者一覧</h2>
   <% @users.each do |user| %>
-    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
-      <div class= "img-responsive">
+  <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+    <div class= "img-responsive">
         <%= profile_img(user) %>
       </div>
       <br>
-        <%= user.email %>
-      <br>
         <%= user.name %>
       <br>
+        <%= user.email %>
+      <br>
         <%= render 'follow_form', user: user %>
+      <br>
     </div>
   <% end %>
 </div>
