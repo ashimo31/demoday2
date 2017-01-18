@@ -1,73 +1,122 @@
-<div class="container">
-  <div class="wrapper col-md-4 col-md-offset-4 col-sm-10">
 
+  <h1> マイページ</h1>
 
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_messages! %>
 
-<h1> プロファイル詳細</h1>
+  <section class="function container-fluid">
+      <div class="row">
+  <h1> プロファイル詳細</h1>
+   <div class="profile-images">
+    <div class="col-md-3 col-sm-6">
+      <div class="profile-image">
 
-  <div class= "img-responsive">
-    <%= profile_img(@user) if profile_img(@user)%>
+      <div class= "img-responsive">
+        <%= profile_img(@user) if profile_img(@user)%>
+      </div>
+
+    </div>
   </div>
 
+  <div class="col-md-3 col-sm-6">
+   <div class="profile-image">
 
-  <div class="field">
-    <%= f.label :お名前 %><br />
-    <%= f.text_field :name, class: "form-control" %>
+    <div class="field">
+      <%= f.label :お名前 %><br />
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
   </div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+ <div class="profile-image">
 
   <h4>プロファイル写真の入力・更新</h4>
-  <div class="button_wrapper">
-    <button class="button1">
-    <%= f.file_field :avatar, class: "img-responsive" %>
+    <div class="button_wrapper">
+      <button class="button">
+      <%= f.file_field :avatar, class: "img-responsive" %>
+    </div>
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+  <div class="profile-image">
+
+   <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+   </div>
+
+ <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+   <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+ <% end %>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<section class="function container-fluid">
+    <div class="row">
+  <h3>パスワードの確認・変更</h3>
+  <div class="password-images">
+
+
+<div class="col-md-3 col-sm-6">
+  <div class="password-image">
+
+    <div class="field">
+     <%= f.label :現在のパスワード %> <i>(現在のパスワードを入力してください)</i><br />
+     <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+    </div>
+
+
+</div>
+</div>
+
+<div class="col-md-3 col-sm-6">
+  <div class="password-image">
+
+    <div class="field">
+      <%= f.label :新しいパスワード %> <i>(変更しない場合は入力不要です)</i><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> 文字必要です</em>
+      <% end %>
+    </div>
+
   </div>
+</div>
 
-<br>
+<div class="col-md-3 col-sm-6">
+  <div class="password-image">
 
-<h3>パスワードの確認・変更</h3>
+    <div class="field">
+      <%= f.label :新しいパスワードの確認 %><i>(もう一度入力してください)</i＞<br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control"%>
+    </div>
+</div>
+</div>
 
-  <div class="field">
-   <%= f.label :メールアドレス %><br />
-   <%= f.email_field :email, autofocus: true, class: "form-control" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
- <div class="field">
-   <%= f.label :現在のパスワード %> <i>(変更を確認するために変更前のパスワードを入力してください)</i><br />
-   <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
- </div>
-
-  <div class="field">
-    <%= f.label :新しいパスワード %> <i>(変更しない場合は入力不要です)</i><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    <% if @minimum_password_length %>
-      <em><%= @minimum_password_length %> 文字必要です</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :新しいパスワードの確認 %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" , class: "form-control"%>
-  </div>
+</div>
 
   <div class="actions">
     <%= f.submit "更新", class: "btn btn-primary btn-block" %>
   </div>
 <% end %>
-<br>
-<h3>ログインユーザー一覧</h3>
-<li><%= link_to 'フォロー一覧', followed_users_path if user_signed_in? %></li>
-<li><%= link_to 'フォロワー一覧', followers_path if user_signed_in? %></li>
+  <br>
+  <h3>ログインユーザー一覧</h3>
+  <li><%= link_to 'フォロー一覧', followed_users_path if user_signed_in? %></li>
+  <li><%= link_to 'フォロワー一覧', followers_path if user_signed_in? %></li>
 
-<br>
-<br>
-<h3>アカウントの削除</h3>
+  <br>
+  <br>
+  <h3>アカウントの削除</h3>
 
-<p>アカウトを削除しますか? <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除してもいいですか?" }, method: :delete %></p>
+  <p>アカウトを削除しますか? <%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除してもいいですか?" }, method: :delete %></p>
 
-<%= link_to "戻る", :back %>
+  <%= link_to "戻る", :back %>
+  </div>
+</div>

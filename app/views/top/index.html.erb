@@ -1,27 +1,24 @@
 <link rel="stylesheet" href="style.css">
+<%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<section class="main-header">
 <p class="flash"><%= notice %><%= alert %></p>
-  <section class="about">
-    <h1>Agribookとは？</h1>
-    <p>
-       Agribookは、安全な農法と安心な食物を見つけるために作成された、アプリです。<br>
-    </p>
-    <p>
-       Agribookは、つながるためのアプリです。<br>
-       メンバーが、今どのようなリクエストを出しているかリアルタイムで把握してメンバー間のニーズの解決をサポートします。
-     </p>
-     <p>
-       まずは、ユーザー登録をお願いします。<br>
-       次に「お知らせ」ページに、探しているものや提供できるものを自由に書いてみてください。それを元にメッセージのやりとりができます。<br>
-       さらに、「お願い」に進めば、そこから相手を見つけたり、相手に依頼をかけることで、ニーズを解決することができます。
-     </p>
-  </section>
+    <section class="about">
+      <h1>Agribookとは？</h1>
+      <p>
+         Agribookは、安全な農法と安心な食物を見つけるために作成された、アプリです。<br>
+      </p>
+      <p>
+         Agribookは、つながるためのアプリです。<br>
+         メンバーが、今どのようなリクエストを出しているかリアルタイムで把握してメンバー間のニーズの解決をサポートします。
+       </p>
+       <p>
+         まずは、ユーザー登録をお願いします。<br>
+         次に「お知らせ」ページに、探しているものや提供できるものを自由に書いてみてください。それを元にメッセージのやりとりができます。<br>
+         さらに、「お願い」に進めば、そこから相手を見つけたり、相手に依頼をかけることで、ニーズを解決することができます。
+       </p>
+    </section>
 
-  <ul style="list-style:none;">
-  <li><%= link_to 'ログイン', new_user_session_path, class: 'btn btn-default' %>
-  <%= link_to 'サインアップ', new_user_registration_path, class: 'btn btn-default' %></li>
-  </ul>
-
-  <section class="main-header">
       <img src="<%= asset_path "potato.JPG", class: "img-responsive" %>">
   </section>
 
