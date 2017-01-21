@@ -111,3 +111,9 @@ html {
 body {
   text-align: center;
 }
+
+.main-title{
+  color: #006400;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}

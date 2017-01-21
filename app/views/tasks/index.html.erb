@@ -1,11 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+    <title>お知らせ一覧</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+</head>
+
 <div class="container">
   <div class="wrapper colß-md-8 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
-    <h2>お知らせ一覧</h2>
+    <div class="main-title">
+    <h1>お知らせ一覧</h1>
+    </div>
+    <h4>メンバーに伝えたいことは「お知らせ」へ、タイトルをクリックするとメッセージのやりとりもできます</h4>
+    <h4>特定のメンバーへの「お願い」は、「お願い一覧表」へどうぞ</h4>
     <%= link_to "お知らせを作成する", new_task_path, class: 'btn btn-default' %>
-    <br>
     <%= link_to 'お願い一覧表へ', works_path, class: 'btn btn-default' %>
     <div>
+      <br>
         <%= form_tag(tasks_path, method: "get") do %>
         <%= label_tag :title, "タイトル" %><%= text_field_tag :title, params[:title] %>
         <%= submit_tag "検索" %>
