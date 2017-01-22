@@ -29,7 +29,7 @@ header ul:after {
 }
 
 .main-header {
-  padding-bottom: 10%;
+  padding-bottom: 15%;
   width: 100%;
   background-size: cover;
   background-image: url("images-master/header.jpg");
@@ -40,7 +40,7 @@ header ul:after {
   display: block;
   margin: 0 auto;
   width: 25%;
-  //padding-top: 10%;
+  //padding-top: 15%;
 }
 
 .about {
@@ -93,6 +93,7 @@ header ul:after {
 
 footer {
   width: 100%;
+  heigth: 54px;
   background-color:#BDB76B;
   padding: 30px 0 10px 0;
   color: white;
