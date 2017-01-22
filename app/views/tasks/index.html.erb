@@ -35,7 +35,7 @@
       <p>種類:<%= task.status %></p>
       <p>本文:<%= task.content %></p>
       <p>地域:<%= task.area.prefecture%></p>
-      <p>作成日:<%= task.deadline %></p>
+      <p>作成日:<%= task.deadline.strftime("%Y年%m月%d日") %></p>
       <p><%= image_tag task.image, class: "img-responsive" %></p>
 
     <% if task.user == current_user%>
