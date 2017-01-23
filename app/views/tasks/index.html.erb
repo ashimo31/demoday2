@@ -43,7 +43,7 @@
 
       <tbody>
         <% @tasks.each do |task| %>
-          <td><p><%= image_tag task.image, class: "img" %></p></td>
+          <td><p><%= image_tag task.image, class: "img-responsive" %></p></td>
           <td><%= link_to task_path(task) do %>
             <h4><strong><%= task.title %></strong></h4>
             <% end %></td>
