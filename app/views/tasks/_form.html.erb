@@ -25,10 +25,10 @@
   <%= f.label :写真のアップロード %><br>
   <%= image_img(@task)   %>
 
-  <div class="button_wrapper">
-   <button class="button1">
-    <%= f.file_field :image %>
-    <%= f.hidden_field :image_cache, class: 'form-control'  %></button>
+    <div class="button_wrapper">
+      <button class="button1">
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache, class: 'form-control'  %></button>
     </div>
   </div>
   <br>
