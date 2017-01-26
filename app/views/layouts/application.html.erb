@@ -10,32 +10,53 @@
 <body>
 
 <header>
-  <ul style="list-style:none;">
-    <li><%= link_to 'Agribook', root_path %></li>
-   <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">メニュー <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li><%= link_to 'お知らせ一覧', tasks_path if user_signed_in?%></li>
-      <li><%= link_to 'お願い一覧', works_path if user_signed_in? %></li>
-      <li><%= link_to 'お願いしている事項一覧', submit_requests_path if user_signed_in? %></li>
-      <li><%= link_to 'お願いされている事項一覧', inbox_submit_requests_path if user_signed_in? %></li>
-      <li><%= link_to '参加者一覧', users_path if user_signed_in? %></li>
+
+<header id="header">
+      <nav class="navbar navbar-default navbar-static-top" role="banner">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+
+                  </button>
+              </div>
+              <div class="navbar-collapse collapse">
+        <div class="menu">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><%= link_to 'Agribook', root_path %></li>
+            <li role="presentation"><%= link_to 'お知らせ一覧', tasks_path if user_signed_in?%></li>
+            <li role="presentation"><%= link_to 'お願い一覧', works_path if user_signed_in? %></li>
+            <li role="presentation"><%= link_to 'お願いしている事項一覧', submit_requests_path if user_signed_in? %></li>
+            <li role="presentation"><%= link_to 'お願いされている事項一覧', inbox_submit_requests_path if user_signed_in? %></li>
+            <li role="presentation"><%= link_to '参加者一覧', users_path if user_signed_in? %></li>
+              <% if user_signed_in? %>
+                <li role="presentation"><%= link_to 'マイページ', edit_user_registration_path %></li>
+                <li role="presentation"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to 'ログイン', new_user_session_path %></li>
+                <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+              <% end %>
+              </ul>
+            </ul>
+            </li>
+            </ul>
+            </header>
+
+            <%= yield %>
 
 
-  <% if user_signed_in? %>
-    <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-  <% else %>
-    <li><%= link_to 'ログイン', new_user_session_path %></li>
-    <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-  <% end %>
-  </ul>
-</ul>
-</li>
-</ul>
-</header>
 
-<%= yield %>
-
+          </ul>
+        </div>
+      </div>
+          </div><!--/.container-->
+      </nav><!--/nav-->
+  </header><!--/header-->
 </body>
 </html>

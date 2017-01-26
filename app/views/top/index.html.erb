@@ -3,26 +3,230 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <section class="main-header">
 <p class="flash"><%= notice %><%= alert %></p>
-    <section class="about">
-      <div class="main-title">
-      <h1>Agribookとは？</h1>
-      <div>
-      <p>
-      <h4> Agribookは、安全な農法と安心な食物を見つけるために作成された、アプリです<br>
-      </p>
-      <br>
-      <p>
-         メンバーが、今どのようなリクエストを出しているかリアルタイムで把握してメンバー間のニーズの解決をサポートします。
-       </p>
-       <p>
-         まずは、メニューからユーザー登録をお願いします。<br>
-         次に「お知らせ」ページに、探しているものや提供できるものを自由に書いてみてください。それを元にメッセージのやりとりができます。<br>
-         さらに、「お願い」に進めば、そこから相手を見つけたり、相手に依頼をかけることで、ニーズを解決することができます。</h4>
-       </p>
-    </section>
 
-      <img src="<%= asset_path "potato.JPG", class:"img-responsive" %>">
-  </section>
+<section class="about">
+      <div class="main-title">
+      <h2>Agribookとは？</h2>
+      </div>
+</section>
+
+  <div class="slider">
+		<div id="about-slider">
+			<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators visible-xs">
+					<li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-slider" data-slide-to="1"></li>
+					<li data-target="#carousel-slider" data-slide-to="2"></li>
+				</ol>
+
+				<div class="carousel-inner">
+					<div class="item active">
+            <img src="<%= asset_path "sozai.JPG", class:"img-responsive" %>">
+						<div class="carousel-caption">
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+								<h2><span>Agribookへようこそ</span></h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+									<p>安全な農法と安心な食物を見つけましょう</p>
+								</div>
+							</div>
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
+
+							</div>
+						</div>
+				    </div>
+
+				    <div class="item">
+						<img src="img/slide.jpg" class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
+								<h2>Agribookへようこそ</h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+									<p>安全な農法と安心な食物を見つけましょう</p>
+								</div>
+							</div>
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.6s">
+								<form class="form-inline">
+									<div class="form-group">
+										<button type="livedemo" name="purchase" class="btn btn-primary btn-lg" required="required">Live Demo</button>
+									</div>
+									<div class="form-group">
+										<button type="getnow" name="subscribe" class="btn btn-primary btn-lg" required="required">Get Now</button>
+									</div>
+								</form>
+							</div>
+						</div>
+				    </div>
+				    <div class="item">
+						<img src="img/slide.jpg" class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+								<h2>Agribookへようこそ</h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+									<p>安全な農法と安心な食物を見つけましょう</p>
+								</div>
+							</div>
+						</div>
+				    </div>
+				</div>
+
+				<a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+
+				<a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div> <!--/#carousel-slider-->
+		</div><!--/#about-slider-->
+	</div><!--/#slider-->
+
+
+              <section>
+                  <img src="<%= asset_path "potato.JPG", class:"img-responsive" %>">
+              </section>
+
+
+
+
+
+	<div class="about">
+		<div class="container">
+			<div class="text-center">
+				<h2>メンバーが、今どのようなリクエストを出しているかリアルタイムで把握してメンバー間のニーズの解決をサポートします。 </h2>
+				<div class="col-md-10 col-md-offset-1">
+					<p>まずは、メニューからユーザー登録をお願いします。<br>
+            次に「お知らせ」ページに、探しているものや提供できるものを自由に書いてみてください。それを元にメッセージのやりとりができます。<br>
+          さらに、「お願い」に進めば、そこから相手を見つけたり、相手に依頼をかけることで、ニーズを解決することができます</p>
+				</div>
+
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="btn-gamp"><a href= "users/sign_in">ログイン</a></div>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="gamp-btn"><a href="users/sign_up">メンバー登録へ</a></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div class="services">
+		<div class="container">
+			<div class="text-center">
+				<h2>Agribookの機能</h2>
+			</div>
+			<div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+				<i class="fa fa-heart-o"></i>
+				<h3>お知らせ</h3>
+				<p>メンバーにお知らせを掲示できます。写真もアップロードできます</p>
+			</div>
+			<div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+				<i class="fa fa-cloud"></i>
+				<h3>メッセージ交換</h3>
+				<p>各お知らせについて一対一のメッセージ交換ができます</p>
+			</div>
+			<div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+				<i class="fa fa-book"></i>
+				<h3>お願い</h3>
+				<p>特定のお願い事項「探しています」「提供できます」「その他」をメンバーを指定して依頼を出したり、受けたりすることができます</p>
+			</div>
+			<div class="col-md-3 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+				<i class="fa fa-gear"></i>
+				<h3>ユーザーフォロー</h3>
+				<p>ユーザー間でフォローしたりされたりすることが可能になります</p>
+			</div>
+		</div>
+	</div>
+
+	<section class="action">
+		<div class="container">
+			<div class="left-text hidden-xs">
+				<h4>Agribookの目指すもの</h4>
+				<p><em>地域に根ざして、足りない食材や資材、余った食材や資材の交換、そして農作業のサポート提供の場の構築を促進します</em><br>
+          <br>地域の生活をリアルタイムで便利なものにするお手伝いをしていきます</p>
+			</div>
+			<div class="right-image hidden-xs"></div>
+		</div>
+	</section>
+
+	<div class="gallery">
+		<div class="text-center">
+			<h2>ギャラリー</h2>
+			<p>誰もが安全で安心な食を実現できるよう、農法からレシピーまで総合的にサポートすることを目指します </p>
+		</div>
+		<div class="container">
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="img/8.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>sweet marley</h4>
+						<p>Marley tried to convince her but she was not interested.</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="img/9.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>sweet marley</h4>
+						<p>Marley tried to convince her but she was not interested.</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="img/10.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>sweet marley</h4>
+						<p>Marley tried to convince her but she was not interested.</p>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="img/11.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>sweet marley</h4>
+						<p>Marley tried to convince her but she was not interested.</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="img/12.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>sweet marley</h4>
+						<p>Marley tried to convince her but she was not interested.</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure class="effect-marley">
+					<img src="img/13.jpg" alt="" class="img-responsive"/>
+					<figcaption>
+						<h4>sweet marley</h4>
+						<p>Marley tried to convince her but she was not interested.</p>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 
 
   <footer>
